@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institute of Science and Technology for Advanced Studies and Research</title>
+  <style>
+    /* General styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+  .header {
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+  padding: 10px 20px;
+  background-color: #1d4b8f;
+  color: #fff;
+  gap: 15px;               
+  height: 100px;         
+}
+
+    .header .logo img {
+      height: 50px;
+    }
+
+    .site-title {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .nav-bar {
+      background-color: #1d4b8f;
+      padding: 10px 0;
+      text-decoration: none;
+    }
+
+    .nav-bar ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    .nav-bar ul li {
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .nav-bar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-bar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Content Section Styles */
+    .content-container {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .left-box {
+      width: 250px;
+      background-color: #f0f4f7;
+      padding: 20px;
+      border-right: 2px solid #1d4b8f;
+    }
+
+    .navigation ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .navigation ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .navigation ul li a:hover {
+      text-decoration: underline;
+      color: #1d4b8f;
+      /* Deep Blue */
+    }
+
+    .right-box {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    .footer {
+      background-color: #1d4b8f;
+      /* Deep Blue */
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <header class="header">
+      <div class="logo">
+        <img src="../Images/istar3.png" alt="University Logo" />
+      </div>
+      <div style="text-align: center; flex-grow: 1;">
+    <h1>ISTAR</h1>
+  </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../Main.html">Home</a></li>
+        <li><a href="../html/Istar.html">Istar</a></li>
+        <li><a href="../html/Semcome.html">Semcom</a></li>
+        <li><a href="../html/Nvpass.html">ADIT</a></li>
+        <li><a href="../html/MBIT.html">MBIT</a></li>
+      </ul>
+    </nav>
+
+
+    <div class="content-container">
+      <!-- Left Frame: Department List -->
+      <div class="left-box">
+        <nav class="navigation">
+          <ul>
+            <li><a href="#cs" onclick="loadDepartment('Computer Science')">Computer Science</a></li>
+            <li><a href="#it" onclick="loadDepartment('Information Technology')">Information Technology</a></li>
+            <li><a href="#ece" onclick="loadDepartment('Electronics and Communication')">Electronics and
+                Communication</a></li>
+            <li><a href="#mech" onclick="loadDepartment('Mechanical Engineering')">Mechanical Engineering</a></li>
+            <li><a href="#civil" onclick="loadDepartment('Civil Engineering')">Civil Engineering</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Frame: Department Information -->
+      <div class="right-box" id="department-info">
+        <h2>Welcome to the ISTAR Institute</h2>
+        <p>Click on a department from the left to learn more about its programs, research, and courses.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 CVM University. All rights reserved | XYZ</p>
+    </footer>
+  </div>
+
+  <script>
+    // Function to load department information dynamically
+    function loadDepartment(department) {
+      const departmentInfo = {
+        "Computer Science": "<h2>Computer Science</h2><p>Computer Science focuses on the theory of computation, algorithms, programming languages, software engineering, and more.</p>",
+        "Information Technology": "<h2>Information Technology</h2><p>Information Technology focuses on the use of computers, networking, databases, and IT infrastructure to solve business problems.</p>",
+        "Electronics and Communication": "<h2>Electronics and Communication</h2><p>This department deals with electronics, communication systems, and electrical components used in advanced technologies.</p>",
+        "Mechanical Engineering": "<h2>Mechanical Engineering</h2><p>Mechanical Engineering involves the design, analysis, and manufacturing of mechanical systems and machinery.</p>",
+        "Civil Engineering": "<h2>Civil Engineering</h2><p>Civil Engineering is concerned with the construction and maintenance of infrastructure such as roads, bridges, and buildings.</p>"
+      };
+
+      // Load the corresponding information
+      document.getElementById("department-info").innerHTML = departmentInfo[department];
+    }
+  </script>
+</body>
+
+</html>

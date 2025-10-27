@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVM University</title>
+  <!-- <link rel="stylesheet" href="styles.css" />
+  -->
+</head>
+<style>
+  /* General styles for the page */
+  /* General styles for the page */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  background-color: #1d4b8f;
+  color: #fff;
+}
+
+
+  .header .logo img {
+    height: 50px;
+  }
+
+  .site-title {
+    font-size: 26px;
+    margin: 0;
+  }
+
+  .nav-bar {
+    background-color: #1d4b8f;
+    /* Deep Blue */
+    padding: 10px 0;
+  }
+
+  .nav-bar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-bar ul li {
+    margin: 0 15px;
+  }
+
+  .nav-bar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .nav-bar ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Content Section Styles */
+  .content-container {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .left-box {
+    width: 250px;
+    background-color: #f0f4f7;
+    padding: 20px;
+    border-right: 2px solid #1d4b8f;
+  }
+
+  .navigation ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .navigation ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .navigation ul li a:hover {
+    text-decoration: underline;
+    color: #1d4b8f;
+    /* Deep Blue */
+  }
+
+  .right-box {
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  .message {
+    display: none;
+  }
+
+  .message:target {
+    display: block;
+  }
+
+  .footer {
+    background-color: #1d4b8f;
+    /* Deep Blue */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+</style>
+
+<body>
+  <div class="main-container">
+    <!-- Top Frame: Logo and University Name -->
+    <header class="header">
+      <div class="logo">
+        <img src="./Images/images.png"  style="height: 100px; width: 100px;" alt="University Logo" />
+      </div>
+      <h1 class="site-title">The CVM University</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="Main.html">Home</a></li>
+        <li><a href="./html/Istar.html">Istar</a></li>
+        <li><a href="./html/Semcome.html">Semcom</a></li>
+        <li><a href="../html/Nvpass.html">ADIT</a></li>
+        <li><a href="../html/MBIT.html">MBIT</a></li>
+      </ul>
+    </nav>
+
+    <!-- Content Section: Sidebar and Main Content -->
+    <div class="content-container">
+      <!-- Left Sidebar -->
+      <aside class="left-box">
+        <nav class="navigation">
+          <ul>
+            <li><a href="#msg1">Information 1</a></li>
+            <li><a href="#msg2">Information 2</a></li>
+            <li><a href="#msg3">Information 3</a></li>
+            <li><a href="#msg4">Information 4</a></li>
+            <li><a href="#msg5">Information 5</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Right Box: Information Sections -->
+      <section class="right-box">
+        <div id="msg1" class="message">OK - You clicked Information 1</div>
+        <div id="msg2" class="message">OK - You clicked Information 2</div>
+        <div id="msg3" class="message">OK - You clicked Information 3</div>
+        <div id="msg4" class="message">OK - You clicked Information 4</div>
+        <div id="msg5" class="message">OK - You clicked Information 5</div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 CVM University. All rights reserved | XYZ</p>
+    </footer>
+  </div>
+</body>
+
+
+</html>

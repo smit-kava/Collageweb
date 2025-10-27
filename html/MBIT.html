@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Website - MBIT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1d4b8f;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .logo img {
+      height: 100px;
+    }
+
+    .header h3 {
+      margin-left: 20px;
+    }
+
+    .nav-bar {
+      background-color: #1d4b8f;
+      padding: 10px 0;
+    }
+
+    .nav-bar ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-bar ul li {
+      margin: 0 15px;
+    }
+
+    .nav-bar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-bar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .content-container {
+      display: flex;
+      flex: 1;
+      padding: 20px;
+    }
+
+    .left-box {
+      width: 25%;
+      background-color: #f0f4f7;
+      padding: 20px;
+      border-right: 2px solid #1d4b8f;
+    }
+
+    .navigation ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .navigation ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .navigation ul li a:hover {
+      text-decoration: underline;
+      color: #1d4b8f;
+    }
+
+    .navigation ul li a.active {
+      color: #1d4b8f;
+      font-weight: bold;
+    }
+
+    .right-box {
+      flex-grow: 1;
+      padding: 20px;
+      background-color: #fff;
+      border-left: 2px solid #1d4b8f;
+    }
+
+    .right-box h1 {
+      color: #1d4b8f;
+    }
+
+    .right-box p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .footer {
+      background-color: #1d4b8f;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .content-container {
+        flex-direction: column;
+      }
+
+      .left-box {
+        width: 100%;
+        border-right: none;
+      }
+
+      .right-box {
+        width: 100%;
+        border-left: none;
+      }
+
+      .header h3 {
+        font-size: 16px;
+      }
+
+      .nav-bar ul {
+        flex-direction: column;
+      }
+
+      .nav-bar ul li {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <img src="../Images/MBIT.png" alt="University Logo" />
+      </div>
+      <div>
+        <h3>MBIT Pages</h3>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../Main.html">Home</a></li>
+        <li><a href="../html/Istar.html">Istar</a></li>
+        <li><a href="../html/Semcome.html">Semcom</a></li>
+        <li><a href="../html/ADIT.html">ADIT</a></li>
+        <li><a href="../html/MBIT.html">MBIT</a></li>
+      </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="content-container">
+      <!-- Left Panel: Departments -->
+      <div class="left-box">
+        <nav class="navigation">
+          <ul>
+            <li><a href="#computer">Computer Engineering</a></li>
+            <li><a href="#it">Information Technology</a></li>
+            <li><a href="#ec">Electronics & Communication</a></li>
+            <li><a href="#electrical">Electrical Engineering</a></li>
+            <li><a href="#mechanical">Mechanical Engineering</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Panel: Dynamic Content -->
+      <div class="right-box">
+        <h1>MBIT Department Overview</h1>
+        <p>Select a department from the left to view more information.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 University. All rights reserved | XYZ</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript for Dynamic Loading -->
+  <script>
+    const content = {
+      computer: {
+        title: "Computer Engineering",
+        text: "The Computer Engineering department focuses on software, hardware, algorithms, and computing systems."
+      },
+      it: {
+        title: "Information Technology",
+        text: "The IT department offers courses and training in data networks, web development, and information systems."
+      },
+      ec: {
+        title: "Electronics & Communication",
+        text: "The E&C department deals with analog and digital systems, embedded systems, and communication technologies."
+      },
+      electrical: {
+        title: "Electrical Engineering",
+        text: "This department covers topics in power systems, control systems, and electrical machinery."
+      },
+      mechanical: {
+        title: "Mechanical Engineering",
+        text: "Mechanical Engineering focuses on thermodynamics, CAD/CAM, fluid mechanics, and manufacturing processes."
+      }
+    };
+
+    document.querySelectorAll('.navigation ul li a').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Remove active from all
+        document.querySelectorAll('.navigation ul li a').forEach(link => link.classList.remove('active'));
+        // Add active to current
+        this.classList.add('active');
+
+        const dept = this.getAttribute('href').substring(1);
+        const box = document.querySelector('.right-box');
+
+        if (content[dept]) {
+          box.innerHTML = `<h1>${content[dept].title}</h1><p>${content[dept].text}</p>`;
+        } else {
+          box.innerHTML = `<h1>Department</h1><p>Details not available.</p>`;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

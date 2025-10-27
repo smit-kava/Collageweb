@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Catalogue - ADIT</title>
+  <style>
+    /* General Styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1d4b8f;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .logo img {
+      height: 100px;
+    }
+
+    .nav-bar {
+      background-color: #1d4b8f;
+      padding: 10px 0;
+    }
+
+    .nav-bar ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-bar ul li {
+      margin: 0 15px;
+    }
+
+    .nav-bar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-bar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Content Section Styles */
+    .content-container {
+      display: flex;
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Left Box: Department List */
+    .left-box {
+      width: 25%;
+      background-color: #f0f4f7;
+      padding: 20px;
+      border-right: 2px solid #1d4b8f;
+    }
+
+    .navigation ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .navigation ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .navigation ul li a:hover {
+      text-decoration: underline;
+      color: #1d4b8f;
+    }
+
+    /* Active Link */
+    .navigation ul li a.active {
+      color: #1d4b8f;
+      font-weight: bold;
+    }
+
+    /* Right Box: Catalogue Table */
+    .right-box {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .book-table th,
+    .book-table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .book-table th {
+      background-color: #1d4b8f;
+      color: white;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #1d4b8f;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .content-container {
+        flex-direction: column;
+      }
+
+      .left-box {
+        width: 100%;
+        border-right: none;
+      }
+
+      .right-box {
+        width: 100%;
+      }
+
+      .header h1 {
+        font-size: 18px;
+      }
+
+      .nav-bar ul {
+        flex-direction: column;
+      }
+
+      .nav-bar ul li {
+        margin-bottom: 10px;
+      }
+
+      .book-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- Top Frame: Logo and Institute Name -->
+    <header class="header">
+      <div class="logo">
+        <img src="../Images/ADIT.png" alt="University Logo" />
+      </div>
+      <h1>ADIT College</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../Main.html">Home</a></li>
+        <li><a href="../html/Istar.html">Istar</a></li>
+        <li><a href="../html/Semcome.html">Semcom</a></li>
+        <li><a href="../html/ADIT.html">ADIT</a></li>
+        <li><a href="../html/MBIT.html">MBIT</a></li>
+      </ul>
+    </nav>
+
+    <!-- Content Section: Left and Right Frames -->
+    <div class="content-container">
+      <!-- Left Frame: Department List -->
+      <div class="left-box">
+        <nav class="navigation">
+          <ul>
+            <li><a href="#cs" class="active">Computer Science</a></li>
+            <li><a href="#it">Information Technology</a></li>
+            <li><a href="#ece">Electronics and Communication</a></li>
+            <li><a href="#mech">Mechanical Engineering</a></li>
+            <li><a href="#civil">Civil Engineering</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Frame: Book Catalogue -->
+      <article class="right-box">
+        <h2>ADIT Book Catalogue</h2>
+
+        <!-- Book Table -->
+        <table class="book-table">
+          <thead>
+            <tr>
+              <th>Book Title</th>
+              <th>Author</th>
+              <th>Genre</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Introduction to Algorithms</td>
+              <td>Thomas H. Cormen</td>
+              <td>Computer Science</td>
+              <td>2009</td>
+            </tr>
+            <tr>
+              <td>The Art of Computer Programming</td>
+              <td>Donald E. Knuth</td>
+              <td>Computer Science</td>
+              <td>2011</td>
+            </tr>
+            <tr>
+              <td>Design Patterns</td>
+              <td>Erich Gamma</td>
+              <td>Software Engineering</td>
+              <td>1994</td>
+            </tr>
+            <tr>
+              <td>Operating System Concepts</td>
+              <td>Abraham Silberschatz</td>
+              <td>Computer Science</td>
+              <td>2018</td>
+            </tr>
+            <tr>
+              <td>Discrete Mathematics</td>
+              <td>Ralph P. Grimaldi</td>
+              <td>Mathematics</td>
+              <td>2018</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 CVM University. All rights reserved | XYZ</p>
+    </footer>
+  </div>
+
+  <script>
+    // Dynamic Department Content (Right Frame)
+    document.querySelectorAll('.navigation ul li a').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        // Remove active class from all links
+        document.querySelectorAll('.navigation ul li a').forEach(function (link) {
+          link.classList.remove('active');
+        });
+        // Add active class to clicked link
+        this.classList.add('active');
+
+        // Update content in the right box
+        const department = this.getAttribute('href').substring(1); // Get the department ID
+        document.querySelector('.right-box').innerHTML = `<h2>${department} Department</h2><p>Details about the ${department} department...</p>`;
+      });
+    });
+  </script>
+
+</body>
+
+</html>
